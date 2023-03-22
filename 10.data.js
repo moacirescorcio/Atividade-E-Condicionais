@@ -9,11 +9,25 @@ function main(){
 
     const resultado = verificar_data(dia,mes,ano)
 
-    console.log(`A data ${resultado} válida!`)
+    console.log(`A data é ${resultado}!`)
 }
 
 function verificar_data(d,m,a){
-    if (m = )
+    if (d < 1){
+        return `INVÁLIDA`
+    }else if (d > 31){
+        return `INVÁLIDA`
+    }else if(m === 4 || m === 6 || m === 9 || m === 11 && d > 30){
+        return `INVÁLIDA`
+    }else if(m == 2){
+        if (a % 4 === 0 && d > 29){
+            return `INVÁLIDA`
+        }else if(d > 28){
+            return `INVÁLIDA`
+        }
+    }else{
+        return `VÁLIDA`
+    }
 }
 
 main()
